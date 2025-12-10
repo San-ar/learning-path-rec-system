@@ -166,8 +166,8 @@ if "final_path" not in st.session_state:
 # -----------------------
 # Sidebar Navigation
 # -----------------------
-st.sidebar.title("🎓 Navigation")
-menu = ["🏠 Home", "👤 Profile Input", "📊 Field Suitability", "🎯 Skill Gaps", "📚 Recommended Courses", "🗺️ Learning Path", "💡 Explanation"]
+st.sidebar.title("  Navigation")
+menu = ["🏠︎ Home", "🕴 Profile Input", "? Field Suitability", "𖣠 Skill Gaps", "✔ Recommended Courses", "🗺 Learning Path", "𖡊 Explanation"]
 menu_keys = ["Home", "Profile Input", "Field Suitability", "Missing Skills", "Candidate Courses", "Learning Path", "Explanation"]
 
 for display, key in zip(menu, menu_keys):
@@ -183,7 +183,7 @@ st.sidebar.info("**Model:** " + ("Sentence-BERT" if use_sbert else "TF-IDF"))
 
 # ----- HOME -----
 if st.session_state.screen == "Home":
-    st.title("🎓 Personalized Learning Path Recommendation System")
+    st.title("🕮 Personalized Learning Path Recommendation System")
     st.markdown("### Welcome to the Career Explorer Tool")
     
     col1, col2 = st.columns([2, 1])
@@ -203,7 +203,7 @@ if st.session_state.screen == "Home":
         - View personalized learning paths with explanations
         """)
         
-        if st.button("🚀 Get Started", type="primary", use_container_width=True):
+        if st.button("⌯⌲ Get Started", type="primary", use_container_width=True):
             st.session_state.screen = "Profile Input"
             st.rerun()
     
@@ -214,7 +214,7 @@ if st.session_state.screen == "Home":
 
 # ----- PROFILE INPUT -----
 elif st.session_state.screen == "Profile Input":
-    st.title("👤 Learner Profile Input")
+    st.title("🕴 Learner Profile Input")
     
     st.markdown("### Tell us about yourself")
     
@@ -306,7 +306,7 @@ elif st.session_state.screen == "Profile Input":
 
 # ----- FIELD SUITABILITY -----
 elif st.session_state.screen == "Field Suitability":
-    st.title("📊 Career Field Suitability Assessment")
+    st.title("? Career Field Suitability Assessment")
     
     prof = st.session_state.profile
     if not prof.get("skills"):
@@ -367,7 +367,7 @@ elif st.session_state.screen == "Field Suitability":
 
 # ----- MISSING SKILLS -----
 elif st.session_state.screen == "Missing Skills":
-    st.title("🎯 Skill Gap Analysis")
+    st.title("𖣠 Skill Gap Analysis")
     
     prof = st.session_state.profile
     if not prof.get("skills") or not st.session_state.selected_field:
@@ -418,7 +418,7 @@ elif st.session_state.screen == "Missing Skills":
 
 # ----- CANDIDATE COURSES -----
 elif st.session_state.screen == "Candidate Courses":
-    st.title("📚 Recommended Courses")
+    st.title("✔ Recommended Courses")
     
     candidates = st.session_state.candidates
     if not candidates:
@@ -441,14 +441,14 @@ elif st.session_state.screen == "Candidate Courses":
                     st.metric("Difficulty", c['difficulty'])
         
         st.markdown("---")
-        if st.button("🗺️ Generate Learning Path", type="primary", use_container_width=True):
+        if st.button("🗺 Generate Learning Path", type="primary", use_container_width=True):
             st.session_state.final_path = sequence_courses(candidates[:8])  # Limit to top 8
             st.session_state.screen = "Learning Path"
             st.rerun()
 
 # ----- LEARNING PATH -----
 elif st.session_state.screen == "Learning Path":
-    st.title("🗺️ Your Personalized Learning Path")
+    st.title("🗺 Your Personalized Learning Path")
     
     path = st.session_state.final_path
     if not path:
@@ -503,7 +503,7 @@ elif st.session_state.screen == "Learning Path":
         
         col1, col2 = st.columns([1, 1])
         with col1:
-            if st.button("💡 View Detailed Explanation", type="primary", use_container_width=True):
+            if st.button("𖡊 View Detailed Explanation", type="primary", use_container_width=True):
                 st.session_state.screen = "Explanation"
                 st.rerun()
         with col2:
