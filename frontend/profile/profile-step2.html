@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Setup - Step 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="bg-gray-50">
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Back to Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-8 max-w-4xl">
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-step-circle completed">1</div>
+        <div class="progress-line completed"></div>
+        <div class="progress-step-circle active">2</div>
+        <div class="progress-line"></div>
+        <div class="progress-step-circle">3</div>
+      </div>
+    </div>
+
+    <div id="wizard-step-2" class="bg-white rounded-xl shadow-lg p-8 fade-in">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">What are your skills?</h2>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2">Search Skills</label>
+        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+          placeholder="e.g., Python, Machine Learning, Database Design...">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-4">Your Skills</label>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+            <div>
+              <div class="font-medium text-gray-800">Python Programming</div>
+              <div class="text-sm text-gray-600">Proficiency Level</div>
+            </div>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option selected>Advanced</option>
+              <option>Expert</option>
+            </select>
+          </div>
+
+          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+            <div>
+              <div class="font-medium text-gray-800">Data Structures</div>
+              <div class="text-sm text-gray-600">Proficiency Level</div>
+            </div>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option>Beginner</option>
+              <option selected>Intermediate</option>
+              <option>Advanced</option>
+              <option>Expert</option>
+            </select>
+          </div>
+
+          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+            <div>
+              <div class="font-medium text-gray-800">Web Development</div>
+              <div class="text-sm text-gray-600">Proficiency Level</div>
+            </div>
+            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+              <option selected>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+              <option>Expert</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="w-full mb-3 border-2 border-indigo-600 text-indigo-600 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition">
+        + Add Another Skill
+      </button>
+
+      <div class="flex gap-3">
+        <a href="profile-step1.html"
+          class="w-full bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center inline-block">
+          ← Back
+        </a>
+        <a href="profile-step3.html"
+          class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center inline-block">
+          Next: Interests →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

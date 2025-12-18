@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Field Recommendations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="bg-gray-50">
+
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-8 max-w-6xl">
+    <div class="mb-12 fade-in text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Your Top Career Matches</h2>
+      <p class="text-xl text-gray-600">Based on your profile, here are the CS/IT fields that suit you best</p>
+    </div>
+
+    <!-- Cards with proper spacing using grid -->
+    <div class="grid gap-10 lg:gap-12 fade-in">
+      
+      <!-- Top Match -->
+      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-transform hover:-translate-y-1">
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-wider mb-2 opacity-90">🏆 Top Match</div>
+            <h3 class="text-3xl font-bold">Machine Learning Engineer</h3>
+          </div>
+          <div class="text-right">
+            <div class="text-5xl font-bold">92%</div>
+            <div class="text-lg opacity-90">Match Score</div>
+          </div>
+        </div>
+        <p class="mb-6 text-lg opacity-90">
+          Design and implement ML models, deploy AI solutions, and optimize algorithms for production systems.
+        </p>
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">Python</span>
+            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">TensorFlow</span>
+            <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">Statistics</span>
+          </div>
+          <a href="skill-gaps.html" class="text-lg font-semibold hover:underline">
+            View Details →
+          </a>
+        </div>
+      </div>
+
+      <!-- Second Match -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-transform hover:-translate-y-1 border border-gray-100">
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-wider mb-2 text-gray-500">Strong Match</div>
+            <h3 class="text-3xl font-bold text-gray-800">Data Scientist</h3>
+          </div>
+          <div class="text-right">
+            <div class="text-5xl font-bold text-indigo-600">87%</div>
+            <div class="text-lg text-gray-600">Match Score</div>
+          </div>
+        </div>
+        <p class="mb-6 text-lg text-gray-700">
+          Analyze complex datasets, build predictive models, and derive actionable insights from data.
+        </p>
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Python</span>
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">SQL</span>
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Statistics</span>
+          </div>
+          <a href="skill-gaps.html" class="text-lg font-semibold text-indigo-600 hover:underline">
+            View Details →
+          </a>
+        </div>
+      </div>
+
+      <!-- Third Match -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-transform hover:-translate-y-1 border border-gray-100">
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <div class="text-sm font-semibold uppercase tracking-wider mb-2 text-gray-500">Good Match</div>
+            <h3 class="text-3xl font-bold text-gray-800">Full Stack Developer</h3>
+          </div>
+          <div class="text-right">
+            <div class="text-5xl font-bold text-indigo-600">78%</div>
+            <div class="text-lg text-gray-600">Match Score</div>
+          </div>
+        </div>
+        <p class="mb-6 text-lg text-gray-700">
+          Build end-to-end web applications, managing both frontend and backend development.
+        </p>
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">React</span>
+            <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+          </div>
+          <a href="skill-gaps.html" class="text-lg font-semibold text-indigo-600 hover:underline">
+            View Details →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>

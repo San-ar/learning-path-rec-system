@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Skill Gap Analysis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="bg-gray-50">
+
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <a href="field-results.html" class="text-gray-600 hover:text-gray-800">← Back to Results</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-8 max-w-6xl">
+    
+    <div class="mb-12 fade-in text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Skill Gap Analysis</h2>
+      <p class="text-xl text-gray-600">
+        For: <span class="font-semibold text-indigo-600">Machine Learning Engineer</span>
+      </p>
+    </div>
+
+    <!-- Two-column layout: Your Skills vs Skills to Develop -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 fade-in">
+
+      <!-- Your Current Skills -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="text-3xl mr-3">✅</span> Your Current Skills
+        </h3>
+
+        <div class="space-y-4">
+          <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+            <div class="font-semibold text-gray-800">Python Programming</div>
+            <div class="text-sm text-gray-600 mt-1">Advanced • Matches requirement</div>
+          </div>
+
+          <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+            <div class="font-semibold text-gray-800">Data Structures & Algorithms</div>
+            <div class="text-sm text-gray-600 mt-1">Intermediate • Matches requirement</div>
+          </div>
+
+          <div class="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg">
+            <div class="font-semibold text-gray-800">Machine Learning Basics</div>
+            <div class="text-sm text-gray-600 mt-1">Beginner • Needs improvement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills to Develop -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+          <span class="text-3xl mr-3">🎯</span> Skills to Develop
+        </h3>
+
+        <div class="space-y-4">
+          <div class="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
+            <div class="flex justify-between items-start mb-2">
+              <div class="font-semibold text-gray-800">Deep Learning</div>
+              <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-medium">HIGH PRIORITY</span>
+            </div>
+            <div class="text-sm text-gray-600">Required: Advanced • Gap: Full skill needed</div>
+          </div>
+
+          <div class="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
+            <div class="flex justify-between items-start mb-2">
+              <div class="font-semibold text-gray-800">TensorFlow/PyTorch</div>
+              <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-medium">HIGH PRIORITY</span>
+            </div>
+            <div class="text-sm text-gray-600">Required: Intermediate • Gap: Full skill needed</div>
+          </div>
+
+          <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
+            <div class="flex justify-between items-start mb-2">
+              <div class="font-semibold text-gray-800">MLOps & Deployment</div>
+              <span class="text-xs bg-orange-600 text-white px-3 py-1 rounded-full font-medium">MEDIUM PRIORITY</span>
+            </div>
+            <div class="text-sm text-gray-600">Required: Intermediate • Gap: Full skill needed</div>
+          </div>
+
+          <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
+            <div class="flex justify-between items-start mb-2">
+              <div class="font-semibold text-gray-800">Statistics & Probability</div>
+              <span class="text-xs bg-orange-600 text-white px-3 py-1 rounded-full font-medium">MEDIUM PRIORITY</span>
+            </div>
+            <div class="text-sm text-gray-600">Required: Advanced • Gap: Full skill needed</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Overall Progress -->
+    <div class="mt-12 bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-2xl fade-in max-w-4xl mx-auto">
+      <h4 class="text-2xl font-bold text-gray-800 mb-4">📊 Overall Progress</h4>
+      
+      <div class="mb-3">
+        <div class="flex justify-between text-lg mb-2">
+          <span class="text-gray-700">Skill Coverage</span>
+          <span class="font-bold text-indigo-600">40% Complete</span>
+        </div>
+        <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden">
+          <div class="bg-indigo-600 h-5 rounded-full transition-all duration-1000" style="width: 40%"></div>
+        </div>
+      </div>
+
+      <p class="text-gray-700 mt-4">
+        You're on the right track! Let's build a personalized learning path to bridge these gaps.
+      </p>
+    </div>
+
+    <!-- Call to Action Button -->
+    <div class="mt-10 text-center fade-in">
+      <a href="learning-path.html"
+         class="inline-block bg-indigo-600 text-white px-12 py-5 rounded-xl font-bold text-xl hover:bg-indigo-700 transition-shadow hover:shadow-2xl">
+        Generate My Learning Path →
+      </a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

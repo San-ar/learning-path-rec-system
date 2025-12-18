@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Setup - Step 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="bg-gray-50">
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Back to Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-8 max-w-4xl">
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-step-circle completed">1</div>
+        <div class="progress-line completed"></div>
+        <div class="progress-step-circle completed">2</div>
+        <div class="progress-line completed"></div>
+        <div class="progress-step-circle active">3</div>
+      </div>
+    </div>
+
+    <div id="wizard-step-3" class="bg-white rounded-xl shadow-lg p-8 fade-in">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">What interests you?</h2>
+
+      <p class="text-gray-600 mb-6">Select all areas that interest you in CS/IT</p>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Artificial Intelligence</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Cybersecurity</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Web Development</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Data Science</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Mobile Development</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Cloud Computing</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">DevOps</span>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
+          <span class="font-medium">Game Development</span>
+        </label>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="./profile-step2.html"
+          class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center">
+          ← Back
+      </a>
+        <a href="../results/field-results.html"
+          class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center">
+          Generate Recommendations →
+    </a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

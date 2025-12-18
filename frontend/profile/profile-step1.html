@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - Background</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="bg-gray-50">
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Back to Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-6 py-8 max-w-4xl">
+    <div class="progress-bar-container">
+      <div class="progress-bar">
+        <div class="progress-step-circle active">1</div>
+        <div class="progress-line"></div>
+        <div class="progress-step-circle">2</div>
+        <div class="progress-line"></div>
+        <div class="progress-step-circle">3</div>
+      </div>
+    </div>
+
+    <!-- Step 1: Background -->
+    <div id="wizard-step-1" class="bg-white rounded-xl shadow-lg p-8 fade-in">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Tell us about yourself</h2>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2">Education Level</label>
+        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+          <option>High School</option>
+          <option>Bachelor's Degree</option>
+          <option>Master's Degree</option>
+          <option>PhD</option>
+        </select>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2">Years of Experience</label>
+        <input type="number"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="0"
+          min="0">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-medium mb-2">Background Description</label>
+        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 h-32"
+          placeholder="Tell us about your background, projects, or any relevant experience..."></textarea>
+      </div>
+
+      <a href="profile-step2.html"
+        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center inline-block">
+        Next: Add Skills →
+      </a>
+    </div>
+
+</body>
+
+</html>

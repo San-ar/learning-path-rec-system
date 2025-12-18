@@ -167,7 +167,7 @@ if "final_path" not in st.session_state:
 # Sidebar Navigation
 # -----------------------
 st.sidebar.title("  Navigation")
-menu = ["🏠︎ Home", "🕴 Profile Input", "? Field Suitability", "𖣠 Skill Gaps", "✔ Recommended Courses", "🗺 Learning Path", "𖡊 Explanation"]
+menu = ["🏠︎ Home", "🕴 Profile Input", "? Field Suitability", "𖣠 Skill Gaps", "✔ Recommended Courses", "જ⁀➴ Learning Path", "🗐 Explanation"]
 menu_keys = ["Home", "Profile Input", "Field Suitability", "Missing Skills", "Candidate Courses", "Learning Path", "Explanation"]
 
 for display, key in zip(menu, menu_keys):
@@ -175,7 +175,7 @@ for display, key in zip(menu, menu_keys):
         st.session_state.screen = key
 
 st.sidebar.markdown("---")
-st.sidebar.info("**Model:** " + ("Sentence-BERT" if use_sbert else "TF-IDF"))
+# st.sidebar.info("**Model:** " + ("Sentence-BERT" if use_sbert else "TF-IDF"))
 
 # -----------------------
 # Main Content Area
@@ -448,7 +448,7 @@ elif st.session_state.screen == "Candidate Courses":
 
 # ----- LEARNING PATH -----
 elif st.session_state.screen == "Learning Path":
-    st.title("🗺 Your Personalized Learning Path")
+    st.title("જ⁀➴ Your Personalized Learning Path")
     
     path = st.session_state.final_path
     if not path:
@@ -508,11 +508,11 @@ elif st.session_state.screen == "Learning Path":
                 st.rerun()
         with col2:
             csv = pd.DataFrame(path)[['title', 'difficulty', 'desc']].to_csv(index=False).encode('utf-8')
-            st.download_button("📥 Download Path (CSV)", csv, file_name="learning_path.csv", use_container_width=True)
+            st.download_button("↧ Download Path (PDF)", csv, file_name="learning_path.csv", use_container_width=True)
 
 # ----- EXPLANATION -----
 elif st.session_state.screen == "Explanation":
-    st.title("💡 Explanation & Transparency Report")
+    st.title("🗐 Explanation & Transparency Report")
     
     prof = st.session_state.profile
     field = FIELDS.get(st.session_state.selected_field, {})
@@ -557,7 +557,7 @@ elif st.session_state.screen == "Explanation":
     
     col1, col2 = st.columns([1, 1])
     with col1:
-        if st.button("🏠 Start New Assessment", use_container_width=True):
+        if st.button("🏠︎ Start New Assessment", use_container_width=True):
             # Reset all except profile
             st.session_state.selected_field = None
             st.session_state.missing_skills = []
@@ -567,4 +567,4 @@ elif st.session_state.screen == "Explanation":
             st.rerun()
     with col2:
         csv = pd.DataFrame(st.session_state.final_path)[['title', 'difficulty', 'desc']].to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Download Full Report", csv, file_name="recommendation_report.csv", use_container_width=True)
+        st.download_button("↧ Download Full Report", csv, file_name="recommendation_report.csv", use_container_width=True)

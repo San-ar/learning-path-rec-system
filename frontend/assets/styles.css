@@ -1,0 +1,99 @@
+/* .screen {
+    display: none;
+} */
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.progress-step {
+    transition: all 0.3s ease;
+}
+
+.skill-badge {
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Progress Bar - Minimal & Clean */
+.progress-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 2rem;
+    padding: 0 1rem;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    gap: 1rem;
+}
+
+.progress-step-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #d1d5db; /* gray-300 */
+    color: #4b5563; /* gray-600 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.progress-step-circle.active {
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+    transform: scale(1.1);
+}
+
+.progress-step-circle.completed {
+    background-color: #4f46e5; /* indigo-600 */
+    color: white;
+}
+
+.progress-line {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #d1d5db; /* gray-300 */
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.progress-line.completed {
+    background-color: #4f46e5; /* indigo-600 */
+}
+
+/* Mobile: Stack vertically on small screens */
+@media (max-width: 540px) {
+    .progress-bar {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .progress-line {
+        width: 6px;
+        height: 60px;
+    }
+}
