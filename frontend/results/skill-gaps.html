@@ -3,128 +3,140 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Skill Gap Analysis</title>
+  <title>Skill Gap Analysis | LPRS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body class="bg-gray-50">
 
-  <nav class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
-      <a href="field-results.html" class="text-gray-600 hover:text-gray-800">← Back to Results</a>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
-  <div class="container mx-auto px-6 py-8 max-w-6xl">
-    
-    <div class="mb-12 fade-in text-center">
-      <h2 class="text-4xl font-bold text-gray-800 mb-4">Skill Gap Analysis</h2>
-      <p class="text-xl text-gray-600">
-        For: <span class="font-semibold text-indigo-600">Machine Learning Engineer</span>
-      </p>
+  <div class="container mx-auto px-6 py-12 max-w-6xl">
+
+    <div class="mb-12 text-center">
+      <div
+        class="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+        Deep Dive Analysis</div>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Bridge the Gap</h2>
+      <p class="text-gray-600">Targeting: <span
+          class="font-bold text-gray-900 underline decoration-indigo-500 underline-offset-4">Machine Learning
+          Engineer</span></p>
     </div>
 
-    <!-- Two-column layout: Your Skills vs Skills to Develop -->
-    <div class="grid md:grid-cols-2 gap-8 lg:gap-12 fade-in">
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
 
-      <!-- Your Current Skills -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-          <span class="text-3xl mr-3">✅</span> Your Current Skills
+      <section class="space-y-6">
+        <h3 class="text-xl font-bold text-gray-800 flex items-center px-2">
+          <span
+            class="w-8 h-8 rounded-lg bg-green-100 text-green-600 flex items-center justify-center mr-3 text-sm">✓</span>
+          Your Current Strengths
         </h3>
 
-        <div class="space-y-4">
-          <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
-            <div class="font-semibold text-gray-800">Python Programming</div>
-            <div class="text-sm text-gray-600 mt-1">Advanced • Matches requirement</div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 divide-y divide-gray-50 overflow-hidden">
+          <div class="p-5 hover:bg-gray-50 transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-gray-800">Python Programming</span>
+              <span class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded">ADVANCED</span>
+            </div>
+            <div class="mt-2 w-full bg-gray-100 rounded-full h-1.5">
+              <div class="bg-green-500 h-1.5 rounded-full" style="width: 100%"></div>
+            </div>
           </div>
 
-          <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
-            <div class="font-semibold text-gray-800">Data Structures & Algorithms</div>
-            <div class="text-sm text-gray-600 mt-1">Intermediate • Matches requirement</div>
-          </div>
-
-          <div class="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded-lg">
-            <div class="font-semibold text-gray-800">Machine Learning Basics</div>
-            <div class="text-sm text-gray-600 mt-1">Beginner • Needs improvement</div>
+          <div class="p-5 hover:bg-gray-50 transition-colors">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-gray-800">Data Structures & Algorithms</span>
+              <span class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded">INTERMEDIATE</span>
+            </div>
+            <div class="mt-2 w-full bg-gray-100 rounded-full h-1.5">
+              <div class="bg-green-500 h-1.5 rounded-full" style="width: 70%"></div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Skills to Develop -->
-      <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-          <span class="text-3xl mr-3">🎯</span> Skills to Develop
+      <section class="space-y-6">
+        <h3 class="text-xl font-bold text-gray-800 flex items-center px-2">
+          <span
+            class="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mr-3 text-sm">🎯</span>
+          Areas to Develop
         </h3>
 
-        <div class="space-y-4">
-          <div class="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-            <div class="flex justify-between items-start mb-2">
-              <div class="font-semibold text-gray-800">Deep Learning</div>
-              <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-medium">HIGH PRIORITY</span>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 divide-y divide-gray-50 overflow-hidden">
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h4 class="font-bold text-gray-800">Deep Learning</h4>
+                <p class="text-xs text-gray-500">Neural Networks, CNNs, RNNs</p>
+              </div>
+              <span class="text-[10px] font-bold bg-red-100 text-red-600 px-2 py-1 rounded">CRITICAL GAP</span>
             </div>
-            <div class="text-sm text-gray-600">Required: Advanced • Gap: Full skill needed</div>
+            <div class="flex items-center gap-4">
+              <div class="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <div class="bg-red-500 h-1.5 rounded-full" style="width: 15%"></div>
+              </div>
+              <span class="text-xs font-bold text-gray-400">15%</span>
+            </div>
           </div>
 
-          <div class="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-            <div class="flex justify-between items-start mb-2">
-              <div class="font-semibold text-gray-800">TensorFlow/PyTorch</div>
-              <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-medium">HIGH PRIORITY</span>
+          <div class="p-5">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h4 class="font-bold text-gray-800">MLOps & Deployment</h4>
+                <p class="text-xs text-gray-500">Docker, Flask, Model Monitoring</p>
+              </div>
+              <span class="text-[10px] font-bold bg-orange-100 text-orange-600 px-2 py-1 rounded">MEDIUM GAP</span>
             </div>
-            <div class="text-sm text-gray-600">Required: Intermediate • Gap: Full skill needed</div>
-          </div>
-
-          <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
-            <div class="flex justify-between items-start mb-2">
-              <div class="font-semibold text-gray-800">MLOps & Deployment</div>
-              <span class="text-xs bg-orange-600 text-white px-3 py-1 rounded-full font-medium">MEDIUM PRIORITY</span>
+            <div class="flex items-center gap-4">
+              <div class="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <div class="bg-orange-400 h-1.5 rounded-full" style="width: 30%"></div>
+              </div>
+              <span class="text-xs font-bold text-gray-400">30%</span>
             </div>
-            <div class="text-sm text-gray-600">Required: Intermediate • Gap: Full skill needed</div>
-          </div>
-
-          <div class="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-lg">
-            <div class="flex justify-between items-start mb-2">
-              <div class="font-semibold text-gray-800">Statistics & Probability</div>
-              <span class="text-xs bg-orange-600 text-white px-3 py-1 rounded-full font-medium">MEDIUM PRIORITY</span>
-            </div>
-            <div class="text-sm text-gray-600">Required: Advanced • Gap: Full skill needed</div>
           </div>
         </div>
-      </div>
-
+      </section>
     </div>
 
-    <!-- Overall Progress -->
-    <div class="mt-12 bg-indigo-50 border-l-4 border-indigo-600 p-8 rounded-2xl fade-in max-w-4xl mx-auto">
-      <h4 class="text-2xl font-bold text-gray-800 mb-4">📊 Overall Progress</h4>
-      
-      <div class="mb-3">
-        <div class="flex justify-between text-lg mb-2">
-          <span class="text-gray-700">Skill Coverage</span>
-          <span class="font-bold text-indigo-600">40% Complete</span>
+    <div class="mt-16 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm relative overflow-hidden">
+      <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+        <div class="relative flex-shrink-0">
+          <svg class="w-32 h-32 transform -rotate-90">
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent"
+              class="text-gray-100" />
+            <circle cx="64" cy="64" r="58" stroke="currentColor" stroke-width="8" fill="transparent"
+              class="text-indigo-600" stroke-dasharray="364.4" stroke-dashoffset="218.6" stroke-linecap="round" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-2xl font-black text-gray-800">40%</span>
+            <span class="text-[8px] font-bold text-gray-400 uppercase">Ready</span>
+          </div>
         </div>
-        <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden">
-          <div class="bg-indigo-600 h-5 rounded-full transition-all duration-1000" style="width: 40%"></div>
+
+        <div class="text-center md:text-left">
+          <h4 class="text-2xl font-bold text-gray-900 mb-2">You're 40% of the way there!</h4>
+          <p class="text-gray-600 mb-6 max-w-lg">
+            Based on our analysis, you already have the foundational logic. We need to focus your training on <span
+              class="font-bold text-indigo-600">Deep Learning frameworks</span> and <span
+              class="font-bold text-indigo-600">Model Deployment</span>.
+          </p>
+          <a href="learning-path.html"
+            class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all hover:shadow-xl hover:-translate-y-0.5">
+            View My Roadmap
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
         </div>
       </div>
-
-      <p class="text-gray-700 mt-4">
-        You're on the right track! Let's build a personalized learning path to bridge these gaps.
-      </p>
-    </div>
-
-    <!-- Call to Action Button -->
-    <div class="mt-10 text-center fade-in">
-      <a href="learning-path.html"
-         class="inline-block bg-indigo-600 text-white px-12 py-5 rounded-xl font-bold text-xl hover:bg-indigo-700 transition-shadow hover:shadow-2xl">
-        Generate My Learning Path →
-      </a>
     </div>
 
   </div>
-
+  <script src="../assets/ui.js"></script>
+  <script>
+    initializeNavbar({ url: '../results/field-results.html', label: 'Field Results' });
+  </script>
 </body>
 
 </html>

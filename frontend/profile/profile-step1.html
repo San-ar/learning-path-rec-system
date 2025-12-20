@@ -9,57 +9,132 @@
 </head>
 
 <body class="bg-gray-50">
-  <nav class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
-      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Back to Dashboard</a>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
   <div class="container mx-auto px-6 py-8 max-w-4xl">
-    <div class="progress-bar-container">
-      <div class="progress-bar">
-        <div class="progress-step-circle active">1</div>
-        <div class="progress-line"></div>
-        <div class="progress-step-circle">2</div>
-        <div class="progress-line"></div>
-        <div class="progress-step-circle">3</div>
+    <!-- Progress Bar with Labels -->
+    <div class="mb-12 relative">
+      <div class="flex items-center justify-between max-w-2xl mx-auto relative">
+        <div class="absolute top-5 left-0 w-full h-0.5 bg-gray-200 -z-0"></div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center text-lg font-bold shadow-md">
+            1</div>
+          <span class="mt-2 text-xs md:text-sm font-bold text-indigo-600">Background</span>
+        </div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-white border-2 border-gray-200 text-gray-400 flex items-center justify-center text-lg font-bold">
+            2</div>
+          <span class="mt-2 text-xs md:text-sm font-medium text-gray-400">Skills</span>
+        </div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-white border-2 border-gray-200 text-gray-400 flex items-center justify-center text-lg font-bold">
+            3</div>
+          <span class="mt-2 text-xs md:text-sm font-medium text-gray-400">Interests</span>
+        </div>
       </div>
     </div>
 
     <!-- Step 1: Background -->
-    <div id="wizard-step-1" class="bg-white rounded-xl shadow-lg p-8 fade-in">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Tell us about yourself</h2>
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 fade-in">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Tell us about yourself</h2>
 
-      <div class="mb-6">
-        <label class="block text-gray-700 font-medium mb-2">Education Level</label>
-        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-          <option>High School</option>
-          <option>Bachelor's Degree</option>
-          <option>Master's Degree</option>
-          <option>PhD</option>
+      <!-- Current Education Level -->
+      <div class="mb-8">
+        <label class="block text-gray-700 font-semibold mb-2">Current Education Level</label>
+        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+          id="education_level">
+          <option value="">Select your education level</option>
+          <option value="high_school">High School</option>
+          <option value="diploma">Diploma/Associate Degree</option>
+          <option value="bachelors">Bachelor's Degree</option>
+          <option value="masters">Master's Degree</option>
+          <option value="phd">PhD/Doctorate</option>
+          <option value="bootcamp">Coding Bootcamp Graduate</option>
+          <option value="self_taught">Self-Taught</option>
         </select>
       </div>
 
-      <div class="mb-6">
-        <label class="block text-gray-700 font-medium mb-2">Years of Experience</label>
-        <input type="number"
-          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="0"
-          min="0">
+      <!-- Field of Study -->
+      <div class="mb-8">
+        <label class="block text-gray-700 font-semibold mb-2">Field of Study (if applicable)</label>
+        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+          placeholder="e.g., Computer Science, Information Technology, Data Science, Physics" id="field_of_study">
+        <p class="text-sm text-gray-500 mt-1">Leave blank if not in school or not relevant</p>
       </div>
 
-      <div class="mb-6">
-        <label class="block text-gray-700 font-medium mb-2">Background Description</label>
-        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 h-32"
-          placeholder="Tell us about your background, projects, or any relevant experience..."></textarea>
+      <!-- Current Status -->
+      <div class="mb-8">
+        <label class="block text-gray-700 font-semibold mb-2">Current Status</label>
+        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+          id="current_status" onchange="toggleStatusFields()">
+          <option value="">Select your current status</option>
+          <option value="student">Student</option>
+          <option value="employed_tech">Employed in Tech/IT</option>
+          <option value="employed_other">Employed (Non-Tech)</option>
+          <option value="job_seeking">Actively Job Seeking</option>
+          <option value="career_change">Transitioning to Tech</option>
+          <option value="freelance">Freelancer / Consultant</option>
+          <option value="entrepreneur">Entrepreneur / Startup Founder</option>
+        </select>
+      </div>
+
+      <!-- Dynamic Fields Based on Status -->
+      <div id="status-fields" class="space-y-8 mb-8 hidden"></div>
+
+      <!-- Optional: Previous Degrees -->
+      <details class="mb-8 bg-gray-50 rounded-lg p-4">
+        <summary class="font-semibold text-gray-700 cursor-pointer hover:text-indigo-600">
+          + Add Previous Degrees (Optional)
+        </summary>
+        <div id="degrees-list" class="mt-4 space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Degree (e.g., Bachelor's, Master's)" class="px-4 py-3 border rounded-lg">
+            <input type="text" placeholder="Major & Year (e.g., Communication, 2020)"
+              class="px-4 py-3 border rounded-lg">
+          </div>
+          <button type="button" class="text-indigo-600 text-sm font-medium hover:underline">+ Add another
+            degree</button>
+        </div>
+      </details>
+
+      <details class="mb-8 bg-gray-50 rounded-lg p-4">
+        <summary class="font-semibold text-gray-700 cursor-pointer hover:text-indigo-600">
+          + Add Other Work Experience (Optional)
+        </summary>
+        <div id="experience-list" class="mt-4 space-y-4">
+        </div>
+        <button type="button" onclick="addExperience()"
+          class="mt-4 text-indigo-600 text-sm font-medium hover:underline">
+          + Add a previous role
+        </button>
+      </details>
+
+      <!-- Career Goal -->
+      <div class="mb-10">
+        <label class="block text-gray-700 font-semibold mb-2">Career Goal <span
+            class="text-gray-400 text-sm font-normal">(Optional but recommended)</span></label>
+        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+          placeholder="e.g., Become a Machine Learning Engineer, Work in Cybersecurity, Start a tech startup"
+          id="career_goal">
+        <p class="text-sm text-gray-500 mt-1">This helps us personalize your recommendations even better!</p>
       </div>
 
       <a href="profile-step2.html"
-        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center inline-block">
+        class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition text-center inline-block shadow-lg hover:shadow-xl">
         Next: Add Skills →
       </a>
     </div>
-
+  </div>
+  <script src="../assets/ui.js"></script>
+  <script>
+    initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
+  </script>
 </body>
 
 </html>

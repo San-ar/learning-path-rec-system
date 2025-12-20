@@ -1,55 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <title>Dashboard | Career LPRS</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
-
 <body class="bg-gray-50">
-  <nav class="bg-white shadow-md">
+
+  <nav class="bg-white shadow-sm border-b border-gray-100">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
+      <h1 class="text-xl font-bold text-indigo-600">Career LPRS</h1>
       <div class="flex gap-4 items-center">
-        <span class="text-gray-600">👤 Alex Johnson</span>
-        <button onclick="showScreen('landing')" class="text-gray-600 hover:text-gray-800">Logout</button>
+        <div class="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xs">U</div>
+        <a href="./login.html" class="text-sm text-gray-400 hover:text-gray-600 transition">Sign Out</a>
       </div>
     </div>
   </nav>
 
-  <div class="container mx-auto px-6 py-8">
-    <div class="mb-8 fade-in">
-      <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to Your Career Journey</h2>
-      <p class="text-gray-600">Let's build your profile to find the perfect CS/IT field for you</p>
+  <div class="container mx-auto px-6 py-12 max-w-5xl">
+    
+    <div class="mb-12 text-center md:text-left">
+      <h2 class="text-4xl font-black text-gray-900 mb-3">Welcome to your future.</h2>
+      <p class="text-lg text-gray-600 max-w-2xl">
+        Our Recommendation System helps you navigate the CS/IT landscape by matching your unique interests with industry demand.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 fade-in">
-      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition cursor-pointer"
-        onclick="showScreen('profile-wizard')">
-        <div class="text-4xl mb-4">📝</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Complete Profile</h3>
-        <p class="text-gray-600">Tell us about your skills, interests, and background</p>
-        <a href="profile/profile-step1.html" class="mt-4 text-indigo-600 font-semibold">Start Now →</a>
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="bg-white rounded-3xl p-8 shadow-sm border-2 border-indigo-500 relative">
+        <div class="absolute -top-4 left-8 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+          Step 01
+        </div>
+        <div class="text-4xl mb-6 mt-2">📝</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Build Profile</h3>
+        <p class="text-sm text-gray-500 leading-relaxed mb-8">
+          Share your background, current skills, and interests. This is the foundation of your recommendations.
+        </p>
+        <a href="profile/profile-step1.html" class="block w-full text-center bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-100">
+          Start Assessment
+        </a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-lg p-6 opacity-50 cursor-not-allowed">
-        <div class="text-4xl mb-4">🎯</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Field Recommendations</h3>
-        <p class="text-gray-600">Discover which CS/IT fields match your profile</p>
-        <div class="mt-4 text-gray-400 font-semibold">Complete profile first</div>
+      <div class="bg-gray-50 rounded-3xl p-8 border border-dashed border-gray-300">
+        <div class="text-gray-300 text-xs font-bold uppercase tracking-widest mb-4">Step 02</div>
+        <div class="text-4xl mb-6 opacity-40 grayscale">🎯</div>
+        <h3 class="text-xl font-bold text-gray-400 mb-2">View Matches</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Once your profile is ready, we'll reveal the top 3 tech fields that align with your personality and skills.
+        </p>
       </div>
 
-      <div class="bg-white rounded-xl shadow-lg p-6 opacity-50 cursor-not-allowed">
-        <div class="text-4xl mb-4">📚</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">Learning Path</h3>
-        <p class="text-gray-600">Get personalized course recommendations</p>
-        <div class="mt-4 text-gray-400 font-semibold">Complete profile first</div>
+      <div class="bg-gray-50 rounded-3xl p-8 border border-dashed border-gray-300">
+        <div class="text-gray-300 text-xs font-bold uppercase tracking-widest mb-4">Step 03</div>
+        <div class="text-4xl mb-6 opacity-40 grayscale">🚀</div>
+        <h3 class="text-xl font-bold text-gray-400 mb-2">Get Roadmap</h3>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Access a curated sequence of courses and resources to bridge your skill gaps and reach your goal.
+        </p>
       </div>
+
     </div>
+
+    <div class="mt-16 bg-indigo-900 rounded-3xl p-10 text-white overflow-hidden relative">
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="max-w-md">
+          <h4 class="text-2xl font-bold mb-2">How it works</h4>
+          <p class="text-indigo-200 text-sm leading-relaxed">
+            Our engine uses industry-standard skill mapping to compare your profile against real-world job requirements in fields like Data Science, DevOps, and Cybersecurity.
+          </p>
+        </div>
+        <div class="flex gap-8 text-center">
+          <!-- <div>
+            <div class="text-2xl font-bold text-indigo-300">15+</div>
+            <div class="text-[10px] uppercase tracking-wider font-bold opacity-60">CS Fields</div>
+          </div> -->
+          <!-- <div>
+            <div class="text-2xl font-bold text-indigo-300">500+</div>
+            <div class="text-[10px] uppercase tracking-wider font-bold opacity-60">Skill Nodes</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-indigo-300">100%</div>
+            <div class="text-[10px] uppercase tracking-wider font-bold opacity-60">Personalized</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="absolute right-0 top-0 w-64 h-64 bg-indigo-800 rounded-full -mr-20 -mt-20 blur-3xl opacity-50"></div>
+    </div>
+
   </div>
-  <script src="../assets/ui.js" defer></script>
-</body>
 
+</body>
 </html>

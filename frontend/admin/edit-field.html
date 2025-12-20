@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Career Field | Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="bg-slate-50 flex min-h-screen">
+  <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col sticky top-0 h-screen">
+    <div class="p-6 border-b border-slate-800">
+      <h1 class="text-white font-bold text-xl tracking-tight">LPRS <span class="text-indigo-400">Admin</span></h1>
+    </div>
+    <nav class="flex-1 p-4 space-y-2">
+      <a href="dashboard.html" class="flex items-center gap-3  hover:bg-slate-800 hover:text-white px-4 py-3 rounded-xl transition">
+        <span>📊</span> Dashboard
+      </a>
+      <a href="edit-field.html" class="flex items-center gap-3 bg-indigo-600 text-white px-4 py-3 rounded-xl transition">
+        <span>💼</span> Career Fields
+      </a>
+      <a href="skill-manager.html" class="flex items-center gap-3 hover:bg-slate-800 hover:text-white px-4 py-3 rounded-xl transition">
+        <span>🧬</span> Skill Taxonomy
+      </a>
+      <div class="pt-4 mt-4 border-t border-slate-800">
+        <a href="../login.html" class="flex items-center gap-3 hover:text-white px-4 py-2 text-sm text-slate-500">
+          <span>🚪</span> Logout
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="flex-1 overflow-y-auto">
+    <header class="bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-4 text-sm">
+        <a href="dashboard.html" class="text-slate-400 hover:text-indigo-600">Dashboard</a>
+        <span class="text-slate-300">/</span>
+        <span class="font-bold text-slate-800">Edit Machine Learning Engineer</span>
+      </div>
+      <button class="bg-indigo-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700 transition">Save Changes</button>
+    </header>
+
+    <div class="p-8 max-w-4xl">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
+        <h3 class="text-lg font-bold text-slate-800 mb-6">Field Configuration</h3>
+        <div class="grid grid-cols-2 gap-6 mb-6">
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-500 uppercase">Field Name</label>
+            <input type="text" value="Machine Learning Engineer" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+          </div>
+          <div class="space-y-2">
+            <label class="text-xs font-bold text-slate-500 uppercase">Average Salary Range</label>
+            <input type="text" value="$90k - $160k" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-slate-500 uppercase">System Description</label>
+          <textarea rows="3" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none">A role focused on designing and implementing AI algorithms and predictive models.</textarea>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+          <h3 class="font-bold text-slate-800">Core Skill Weights <span class="text-slate-400 text-xs font-normal ml-2">(0.0 to 1.0)</span></h3>
+          <button class="text-indigo-600 text-xs font-bold hover:underline">+ Link New Skill</button>
+        </div>
+        <table class="w-full text-left">
+          <thead class="bg-slate-50 text-slate-500 text-[10px] uppercase font-bold tracking-wider">
+            <tr>
+              <th class="px-6 py-4">Required Skill</th>
+              <th class="px-6 py-4">Category</th>
+              <th class="px-6 py-4 w-48">Weight Value</th>
+              <th class="px-6 py-4">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm">
+            <tr>
+              <td class="px-6 py-4 font-medium">Python Programming</td>
+              <td class="px-6 py-4 text-slate-500">Language</td>
+              <td class="px-6 py-4">
+                <input type="number" step="0.1" value="0.9" class="w-20 px-2 py-1 bg-indigo-50 border border-indigo-100 rounded text-indigo-700 font-bold outline-none">
+              </td>
+              <td class="px-6 py-4"><span class="text-indigo-600 text-[10px] font-bold">CRITICAL</span></td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium">Linear Algebra</td>
+              <td class="px-6 py-4 text-slate-500">Mathematics</td>
+              <td class="px-6 py-4">
+                <input type="number" step="0.1" value="0.7" class="w-20 px-2 py-1 bg-slate-50 border border-slate-200 rounded text-slate-700 outline-none">
+              </td>
+              <td class="px-6 py-4"><span class="text-slate-400 text-[10px] font-bold">CORE</span></td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium">AWS SageMaker</td>
+              <td class="px-6 py-4 text-slate-500">Tools</td>
+              <td class="px-6 py-4">
+                <input type="number" step="0.1" value="0.4" class="w-20 px-2 py-1 bg-slate-50 border border-slate-200 rounded text-slate-700 outline-none">
+              </td>
+              <td class="px-6 py-4"><span class="text-slate-400 text-[10px] font-bold">ELECTIVE</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

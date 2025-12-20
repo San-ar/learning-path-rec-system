@@ -9,87 +9,137 @@
 </head>
 
 <body class="bg-gray-50">
-  <nav class="bg-white shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-indigo-600">Career LPRS</h1>
-      <a href="../dashboard.html" class="text-gray-600 hover:text-gray-800">← Back to Dashboard</a>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
   <div class="container mx-auto px-6 py-8 max-w-4xl">
-    <!-- Progress Bar -->
-    <div class="progress-bar-container">
-      <div class="progress-bar">
-        <div class="progress-step-circle completed">1</div>
-        <div class="progress-line completed"></div>
-        <div class="progress-step-circle completed">2</div>
-        <div class="progress-line completed"></div>
-        <div class="progress-step-circle active">3</div>
+    <div class="mb-12 relative">
+      <div class="flex items-center justify-between max-w-2xl mx-auto relative">
+        <div class="absolute top-5 left-0 w-full h-0.5 bg-green-500 -z-0"></div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center text-lg font-bold shadow-md">
+            ✓</div>
+          <span class="mt-2 text-xs md:text-sm font-semibold text-green-600">Background</span>
+        </div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center text-lg font-bold shadow-md">
+            ✓</div>
+          <span class="mt-2 text-xs md:text-sm font-semibold text-green-600">Skills</span>
+        </div>
+
+        <div class="flex flex-col items-center relative z-10 bg-gray-50 px-2">
+          <div
+            class="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center text-lg font-bold shadow-lg">
+            3</div>
+          <span class="mt-2 text-xs md:text-sm font-bold text-indigo-600">Interests</span>
+        </div>
       </div>
     </div>
 
     <div id="wizard-step-3" class="bg-white rounded-xl shadow-lg p-8 fade-in">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">What interests you?</h2>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Refine your preferences</h2>
+      <p class="text-gray-600 mb-8">Tell us what areas excite you and how you plan to study.</p>
 
-      <p class="text-gray-600 mb-6">Select all areas that interest you in CS/IT</p>
+      <h3 class="text-sm font-black text-indigo-600 uppercase tracking-widest mb-4">1. Technical Interests</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition interest-checkbox">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600" name="interests[]"
+            value="artificial_intelligence">
+          <div>
+            <span class="font-medium">🤖 Artificial Intelligence</span>
+            <p class="text-xs text-gray-500">ML, Neural Networks, NLP</p>
+          </div>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition interest-checkbox">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600" name="interests[]" value="data_science">
+          <div>
+            <span class="font-medium">📊 Data Science</span>
+            <p class="text-xs text-gray-500">Analysis, Stats, Visualization</p>
+          </div>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition interest-checkbox">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600" name="interests[]" value="cybersecurity">
+          <div>
+            <span class="font-medium">🔒 Cybersecurity</span>
+            <p class="text-xs text-gray-500">Ethical Hacking, Security Analysis</p>
+          </div>
+        </label>
+        <label
+          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition interest-checkbox">
+          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600" name="interests[]" value="web_development">
+          <div>
+            <span class="font-medium">🌐 Web Development</span>
+            <p class="text-xs text-gray-500">Frontend, Backend, Full-Stack</p>
+          </div>
+        </label>
+      </div>
 
-      <div class="grid grid-cols-2 gap-3 mb-6">
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Artificial Intelligence</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Cybersecurity</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Web Development</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Data Science</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Mobile Development</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Cloud Computing</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">DevOps</span>
-        </label>
-        <label
-          class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-indigo-500 transition">
-          <input type="checkbox" class="mr-3 w-5 h-5 text-indigo-600">
-          <span class="font-medium">Game Development</span>
-        </label>
+      <h3 class="text-sm font-black text-indigo-600 uppercase tracking-widest mb-4">2. Learning Logistics</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="p-5 border-2 border-gray-100 rounded-xl bg-gray-50/50">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Weekly Availability</label>
+          <div class="flex items-center gap-3">
+            <input type="number" name="hours_per_week" placeholder="10" min="1" max="100"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+            <span class="text-sm font-bold text-gray-500 whitespace-nowrap">hrs / wk</span>
+          </div>
+          <p class="text-[10px] text-gray-400 mt-2 italic">Used to estimate your completion roadmap.</p>
+        </div>
+
+        <div class="p-5 border-2 border-gray-100 rounded-xl bg-gray-50/50">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Preferred Learning Style</label>
+          <select name="learning_style"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-white">
+            <option value="video">🎥 Video Lectures</option>
+            <option value="hands-on">🛠️ Hands-on / Labs</option>
+            <option value="reading">📖 Reading / Docs</option>
+            <option value="mixed">🔄 Mixed Media</option>
+          </select>
+          <p class="text-[10px] text-gray-400 mt-2 italic">Helps us filter recommended resources.</p>
+        </div>
+      </div>
+
+      <div class="mb-10 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded text-sm text-gray-700">
+        💡 <strong>Tip:</strong> We use your learning style to prioritize Coursera, YouTube, or documentation in your
+        path.
       </div>
 
       <div class="flex gap-3">
         <a href="./profile-step2.html"
           class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center">
           ← Back
-      </a>
+        </a>
         <a href="../results/field-results.html"
-          class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center">
+          class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center shadow-lg shadow-indigo-200">
           Generate Recommendations →
-    </a>
+        </a>
       </div>
     </div>
   </div>
-  </div>
 
+  <script>
+    // Visual feedback for checkbox selection
+    document.querySelectorAll('.interest-checkbox input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const label = this.closest('.interest-checkbox');
+        if (this.checked) {
+          label.classList.add('border-indigo-500', 'bg-indigo-50');
+        } else {
+          label.classList.remove('border-indigo-500', 'bg-indigo-50');
+        }
+      });
+    });
+  </script>
+  <script src="../assets/ui.js"></script>
+  <script>
+    initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
+  </script>
 </body>
 
 </html>
