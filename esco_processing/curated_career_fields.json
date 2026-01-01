@@ -1,0 +1,235 @@
+[
+  {
+    "field_id": "ml_engineer",
+    "field_name": "Machine Learning Engineer",
+    "category": "AI & Data Science",
+    "description": "Design, build, and deploy machine learning models and AI systems in production environments.",
+    "avg_salary": 125000,
+    "growth_outlook": "High Growth",
+    "priority_skills": [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "scikit-learn",
+      "Statistics",
+      "Machine Learning",
+      "Deep Learning",
+      "MLOps"
+    ],
+    "learning_topics": [
+      {
+        "topic": "Python for Machine Learning",
+        "description": "Master Python programming with NumPy, Pandas, and scikit-learn",
+        "duration_weeks": 6,
+        "suggested_courses": [
+          {
+            "title": "Python for Data Science and Machine Learning",
+            "provider": "Coursera",
+            "difficulty": "Beginner"
+          }
+        ]
+      },
+      {
+        "topic": "Machine Learning Foundations",
+        "description": "Learn supervised and unsupervised learning algorithms",
+        "duration_weeks": 12,
+        "suggested_courses": [
+          {
+            "title": "Machine Learning Specialization",
+            "provider": "Coursera - Stanford",
+            "difficulty": "Intermediate"
+          }
+        ]
+      },
+      {
+        "topic": "Deep Learning",
+        "description": "Neural networks, CNNs, RNNs, and transformers",
+        "duration_weeks": 12,
+        "suggested_courses": [
+          {
+            "title": "Deep Learning Specialization",
+            "provider": "Coursera - DeepLearning.AI",
+            "difficulty": "Advanced"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "field_id": "full_stack_dev",
+    "field_name": "Full Stack Developer",
+    "category": "Software Development",
+    "description": "Build complete web applications managing both frontend and backend development.",
+    "avg_salary": 95000,
+    "growth_outlook": "Stable",
+    "priority_skills": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "HTML",
+      "CSS",
+      "SQL",
+      "MongoDB",
+      "Git",
+      "RESTful APIs"
+    ],
+    "learning_topics": [
+      {
+        "topic": "Frontend Development",
+        "description": "HTML, CSS, JavaScript, React fundamentals",
+        "duration_weeks": 8,
+        "suggested_courses": [
+          {
+            "title": "Meta Front-End Developer",
+            "provider": "Coursera",
+            "difficulty": "Beginner"
+          }
+        ]
+      },
+      {
+        "topic": "Backend Development",
+        "description": "Node.js, Express, databases, and APIs",
+        "duration_weeks": 8,
+        "suggested_courses": [
+          {
+            "title": "Backend Development and APIs",
+            "provider": "freeCodeCamp",
+            "difficulty": "Intermediate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "field_id": "data_scientist",
+    "field_name": "Data Scientist",
+    "category": "AI & Data Science",
+    "description": "Analyze complex datasets, build predictive models, and derive actionable business insights.",
+    "avg_salary": 115000,
+    "growth_outlook": "High Growth",
+    "priority_skills": [
+      "Python",
+      "R",
+      "SQL",
+      "Statistics",
+      "Machine Learning",
+      "Data Visualization",
+      "Pandas",
+      "scikit-learn"
+    ],
+    "learning_topics": [
+      {
+        "topic": "Data Analysis with Python",
+        "description": "Pandas, NumPy, data cleaning and exploration",
+        "duration_weeks": 6,
+        "suggested_courses": [
+          {
+            "title": "Data Analysis with Python",
+            "provider": "Coursera - IBM",
+            "difficulty": "Beginner"
+          }
+        ]
+      },
+      {
+        "topic": "Statistical Analysis",
+        "description": "Probability, hypothesis testing, regression",
+        "duration_weeks": 8,
+        "suggested_courses": [
+          {
+            "title": "Statistics with Python Specialization",
+            "provider": "Coursera",
+            "difficulty": "Intermediate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "field_id": "cybersecurity_analyst",
+    "field_name": "Cybersecurity Analyst",
+    "category": "Security",
+    "description": "Protect systems and networks from cyber threats through monitoring, analysis, and response.",
+    "avg_salary": 105000,
+    "growth_outlook": "High Demand",
+    "priority_skills": [
+      "Network Security",
+      "Ethical Hacking",
+      "Cryptography",
+      "SIEM Tools",
+      "Penetration Testing",
+      "Linux",
+      "Python"
+    ],
+    "learning_topics": [
+      {
+        "topic": "Network Security Fundamentals",
+        "description": "TCP/IP, firewalls, VPNs, network protocols",
+        "duration_weeks": 6,
+        "suggested_courses": [
+          {
+            "title": "Introduction to Cybersecurity",
+            "provider": "Coursera - NYU",
+            "difficulty": "Beginner"
+          }
+        ]
+      },
+      {
+        "topic": "Ethical Hacking",
+        "description": "Penetration testing and vulnerability assessment",
+        "duration_weeks": 12,
+        "suggested_courses": [
+          {
+            "title": "The Complete Ethical Hacking Course",
+            "provider": "Udemy",
+            "difficulty": "Intermediate"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "field_id": "devops_engineer",
+    "field_name": "DevOps Engineer",
+    "category": "Infrastructure",
+    "description": "Automate and optimize software development lifecycle through CI/CD and infrastructure management.",
+    "avg_salary": 110000,
+    "growth_outlook": "High Demand",
+    "priority_skills": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "AWS",
+      "Terraform",
+      "Linux",
+      "Git",
+      "Python",
+      "CI/CD"
+    ],
+    "learning_topics": [
+      {
+        "topic": "Linux System Administration",
+        "description": "Command line, shell scripting, system management",
+        "duration_weeks": 6,
+        "suggested_courses": [
+          {
+            "title": "Linux Fundamentals",
+            "provider": "Coursera",
+            "difficulty": "Beginner"
+          }
+        ]
+      },
+      {
+        "topic": "Container Orchestration",
+        "description": "Docker, Kubernetes, container management",
+        "duration_weeks": 8,
+        "suggested_courses": [
+          {
+            "title": "Docker and Kubernetes Complete Course",
+            "provider": "Udemy",
+            "difficulty": "Intermediate"
+          }
+        ]
+      }
+    ]
+  }
+]

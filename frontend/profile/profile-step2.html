@@ -46,70 +46,24 @@
       <p class="text-gray-600 mb-6">Add your technical skills and rate your proficiency level. These will be matched
         against career field requirements.</p>
 
-      <div class="mb-6 relative"> <label class="block text-gray-700 font-medium mb-2">Search & Add Skills</label>
+      <div class="mb-6 relative">
+        <label class="block text-gray-700 font-medium mb-2">Search & Add Skills</label>
         <div class="flex gap-2">
-          <input type="text"
+          <input type="text" id="skill-search"
             class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-            placeholder="e.g., Python, Machine Learning..." id="skill-search" onkeyup="handleSkillSearch(this.value)">
+            placeholder="e.g., Python, SQL, JavaScript..." oninput="handleSkillSearch(this.value)" autocomplete="off">
           <button onclick="addSkillManual()"
             class="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
             Add
           </button>
         </div>
-
         <div id="skill-results"
-          class="absolute z-50 w-full bg-white border border-gray-200 rounded-lg mt-1 shadow-xl hidden">
-        </div>
-
-        <p class="text-sm text-gray-500 mt-2">💡 Start typing to search from ESCO skills database</p>
+          class="absolute z-50 w-full bg-white border border-gray-200 rounded-lg mt-1 shadow-xl hidden"></div>
       </div>
 
       <div class="mb-6">
         <label class="block text-gray-700 font-medium mb-4">Your Skills & Proficiency</label>
-        <div class="space-y-4" id="skills-list">
-          <!-- Example skills - these would be dynamically added -->
-          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-            <div class="flex-1">
-              <div class="font-medium text-gray-800">Python Programming</div>
-              <div class="text-sm text-gray-600">Programming Language</div>
-            </div>
-            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-              <option value="1">Beginner</option>
-              <option value="2">Intermediate</option>
-              <option value="3" selected>Advanced</option>
-              <option value="4">Expert</option>
-            </select>
-            <button class="ml-3 text-red-600 hover:text-red-800">✕</button>
-          </div>
-
-          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-            <div class="flex-1">
-              <div class="font-medium text-gray-800">Data Structures & Algorithms</div>
-              <div class="text-sm text-gray-600">Computer Science Fundamentals</div>
-            </div>
-            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-              <option value="1">Beginner</option>
-              <option value="2" selected>Intermediate</option>
-              <option value="3">Advanced</option>
-              <option value="4">Expert</option>
-            </select>
-            <button class="ml-3 text-red-600 hover:text-red-800">✕</button>
-          </div>
-
-          <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-            <div class="flex-1">
-              <div class="font-medium text-gray-800">JavaScript</div>
-              <div class="text-sm text-gray-600">Programming Language</div>
-            </div>
-            <select class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
-              <option value="1" selected>Beginner</option>
-              <option value="2">Intermediate</option>
-              <option value="3">Advanced</option>
-              <option value="4">Expert</option>
-            </select>
-            <button class="ml-3 text-red-600 hover:text-red-800">✕</button>
-          </div>
-        </div>
+        <div class="space-y-4" id="skills-list"></div>
 
         <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
           <p class="text-sm text-gray-700">
@@ -122,23 +76,47 @@
         </div>
       </div>
 
-      <div class="flex gap-3">
-        <a href="profile-step1.html"
-          class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition text-center inline-block">
+      <div class="flex flex-col md:flex-row gap-4 mt-8">
+        <button onclick="saveAndGoBack()"
+          class="flex-1 px-6 py-4 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-center hover:bg-gray-50 transition">
           ← Back
-        </a>
-        <a href="profile-step3.html"
-          class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition text-center inline-block">
+        </button>
+        <button onclick="saveStep2()"
+          class="flex-[2] bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition">
           Next: Interests →
-        </a>
+        </button>
       </div>
-    </div>
 
-  </div>
-  <script src="../assets/ui.js"></script>
-  <script>
-    initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
-  </script>
+    </div>
+    <script src="../assets/ui.js"></script>
+    <script>
+      initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
+
+        const profile = getProfile();
+        const list = document.getElementById('skills-list');
+
+        if (profile.skills && profile.skills.length > 0) {
+          list.innerHTML = ''; // Clear any placeholders
+
+          profile.skills.forEach(skill => {
+            // Render the UI row first
+            renderSkillItem(skill.name, skill.category);
+
+            // Immediately find the select menu we just created and set its value
+            const allRows = list.querySelectorAll('.flex-1');
+            const lastRow = allRows[allRows.length - 1].parentElement;
+            const select = lastRow.querySelector('select');
+
+            if (select) {
+              select.value = skill.level;
+            }
+          });
+        }
+      });
+    </script>
 
 </body>
 

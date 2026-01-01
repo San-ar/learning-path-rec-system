@@ -12,7 +12,6 @@
   <div id="navbar-placeholder"></div>
 
   <div class="container mx-auto px-6 py-8 max-w-4xl">
-    <!-- Progress Bar with Labels -->
     <div class="mb-12 relative">
       <div class="flex items-center justify-between max-w-2xl mx-auto relative">
         <div class="absolute top-5 left-0 w-full h-0.5 bg-gray-200 -z-0"></div>
@@ -40,35 +39,51 @@
       </div>
     </div>
 
-    <!-- Step 1: Background -->
     <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 fade-in">
       <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Tell us about yourself</h2>
 
-      <!-- Current Education Level -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="md:col-span-2">
+          <label class="block text-gray-700 font-semibold mb-2">Highest Education Level</label>
+          <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+            id="education_level">
+            <option value="">Select highest level</option>
+            <option value="high_school">High School</option>
+            <option value="diploma">Diploma/Associate Degree</option>
+            <option value="bachelors">Bachelor's Degree</option>
+            <option value="masters">Master's Degree</option>
+            <option value="phd">PhD/Doctorate</option>
+            <option value="bootcamp">Coding Bootcamp Graduate</option>
+            <option value="self_taught">Self-Taught</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Year Completed</label>
+          <input type="number" id="completion_year" min="1970" max="2030" placeholder="YYYY"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+        </div>
+      </div>
+
       <div class="mb-8">
-        <label class="block text-gray-700 font-semibold mb-2">Current Education Level</label>
-        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-          id="education_level">
-          <option value="">Select your education level</option>
-          <option value="high_school">High School</option>
-          <option value="diploma">Diploma/Associate Degree</option>
-          <option value="bachelors">Bachelor's Degree</option>
-          <option value="masters">Master's Degree</option>
-          <option value="phd">PhD/Doctorate</option>
-          <option value="bootcamp">Coding Bootcamp Graduate</option>
-          <option value="self_taught">Self-Taught</option>
+        <label class="block text-gray-700 font-semibold mb-2">Field of Study / Major</label>
+        <select id="field_of_study"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+          <option value="">Select your major</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Business Administration">Business Administration</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Other (CS Related)">Other (CS Related)</option>
+          <option value="Other (Non-CS)">Other (Non-CS)</option>
         </select>
       </div>
 
-      <!-- Field of Study -->
-      <div class="mb-8">
-        <label class="block text-gray-700 font-semibold mb-2">Field of Study (if applicable)</label>
-        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-          placeholder="e.g., Computer Science, Information Technology, Data Science, Physics" id="field_of_study">
-        <p class="text-sm text-gray-500 mt-1">Leave blank if not in school or not relevant</p>
-      </div>
-
-      <!-- Current Status -->
       <div class="mb-8">
         <label class="block text-gray-700 font-semibold mb-2">Current Status</label>
         <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
@@ -84,56 +99,110 @@
         </select>
       </div>
 
-      <!-- Dynamic Fields Based on Status -->
       <div id="status-fields" class="space-y-8 mb-8 hidden"></div>
 
-      <!-- Optional: Previous Degrees -->
-      <details class="mb-8 bg-gray-50 rounded-lg p-4">
+      <details class="mb-8 bg-gray-50 rounded-lg p-4" id="prev-degrees-details">
         <summary class="font-semibold text-gray-700 cursor-pointer hover:text-indigo-600">
-          + Add Previous Degrees (Optional)
+          + Add Other Degrees (Optional)
         </summary>
-        <div id="degrees-list" class="mt-4 space-y-4">
-          <div class="grid md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Degree (e.g., Bachelor's, Master's)" class="px-4 py-3 border rounded-lg">
-            <input type="text" placeholder="Major & Year (e.g., Communication, 2020)"
-              class="px-4 py-3 border rounded-lg">
-          </div>
-          <button type="button" class="text-indigo-600 text-sm font-medium hover:underline">+ Add another
-            degree</button>
-        </div>
+        <div id="degrees-list" class="mt-4 space-y-4"></div>
+        <button type="button" onclick="addDegreeRow()"
+          class="mt-4 text-indigo-600 text-sm font-medium hover:underline">+ Add a degree</button>
       </details>
 
       <details class="mb-8 bg-gray-50 rounded-lg p-4">
         <summary class="font-semibold text-gray-700 cursor-pointer hover:text-indigo-600">
           + Add Other Work Experience (Optional)
         </summary>
-        <div id="experience-list" class="mt-4 space-y-4">
-        </div>
+        <div id="experience-list" class="mt-4 space-y-4"></div>
         <button type="button" onclick="addExperience()"
           class="mt-4 text-indigo-600 text-sm font-medium hover:underline">
           + Add a previous role
         </button>
       </details>
 
-      <!-- Career Goal -->
       <div class="mb-10">
         <label class="block text-gray-700 font-semibold mb-2">Career Goal <span
             class="text-gray-400 text-sm font-normal">(Optional but recommended)</span></label>
         <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-          placeholder="e.g., Become a Machine Learning Engineer, Work in Cybersecurity, Start a tech startup"
-          id="career_goal">
+          placeholder="e.g., Become a Machine Learning Engineer" id="career_goal">
         <p class="text-sm text-gray-500 mt-1">This helps us personalize your recommendations even better!</p>
       </div>
 
-      <a href="profile-step2.html"
-        class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 transition text-center inline-block shadow-lg hover:shadow-xl">
+      <button onclick="saveStep1()"
+        class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-indigo-700 shadow-lg">
         Next: Add Skills →
-      </a>
+      </button>
     </div>
   </div>
+
   <script src="../assets/ui.js"></script>
   <script>
     initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const profile = getProfile();
+
+      if (profile && profile.background) {
+        const bg = profile.background;
+
+        // Restore Education Level
+        if (bg.education_level) {
+          const eduSelect = document.getElementById('education_level');
+          if (eduSelect) eduSelect.value = bg.education_level;
+        }
+
+        // Restore Completion Year
+        if (bg.completion_year) {
+          const yearInput = document.getElementById('completion_year');
+          if (yearInput) yearInput.value = bg.completion_year;
+        }
+
+        // Restore Field of Study
+        if (bg.field_of_study) {
+          const fieldInput = document.getElementById('field_of_study');
+          if (fieldInput) fieldInput.value = bg.field_of_study;
+        }
+
+        // Restore Career Goal
+        if (bg.career_goal) {
+          const goalInput = document.getElementById('career_goal');
+          if (goalInput) goalInput.value = bg.career_goal;
+        }
+
+        // Restore Current Status & Dynamic Fields
+        if (bg.current_status) {
+          const statusSelect = document.getElementById('current_status');
+          if (statusSelect) {
+            statusSelect.value = bg.current_status;
+            toggleStatusFields();
+
+            setTimeout(() => {
+              const statusContainer = document.getElementById('status-fields');
+              const inputs = statusContainer.querySelectorAll('input, select');
+              if (bg.status_details) {
+                inputs.forEach((input, index) => {
+                  if (bg.status_details[index]) {
+                    input.value = bg.status_details[index];
+                  }
+                });
+              }
+            }, 50);
+          }
+        }
+
+        // Restore Lists
+        if (bg.degrees && bg.degrees.length > 0) {
+          document.getElementById('degrees-list').innerHTML = '';
+          bg.degrees.forEach(d => addDegreeRow(d));
+        }
+
+        if (bg.experience && bg.experience.length > 0) {
+          document.getElementById('experience-list').innerHTML = '';
+          bg.experience.forEach(e => addExperience(e));
+        }
+      }
+    });
   </script>
 </body>
 
