@@ -92,30 +92,68 @@
     <script>
       initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
 
-      document.addEventListener('DOMContentLoaded', () => {
-        initializeNavbar({ url: '../dashboard.html', label: 'Dashboard' });
-
-        const profile = getProfile();
-        const list = document.getElementById('skills-list');
-
-        if (profile.skills && profile.skills.length > 0) {
-          list.innerHTML = ''; // Clear any placeholders
-
-          profile.skills.forEach(skill => {
-            // Render the UI row first
-            renderSkillItem(skill.name, skill.category);
-
-            // Immediately find the select menu we just created and set its value
-            const allRows = list.querySelectorAll('.flex-1');
-            const lastRow = allRows[allRows.length - 1].parentElement;
-            const select = lastRow.querySelector('select');
-
-            if (select) {
-              select.value = skill.level;
-            }
-          });
+      document.addEventListener('DOMContentLoaded', async () => {
+        // Fetch official skills for the search feature
+        try {
+          const response = await fetch('http://127.0.0.1:8000/api/skills');
+          window.OFFICIAL_SKILL_DATABASE = await response.json();
+        } catch (err) {
+          console.error("Failed to load skills", err);
         }
+
+        // Load existing skills from LocalStorage
+        renderSkillsList();
       });
+
+      // Handles the "Add" button for custom or typed skills
+      function addSkillManual() {
+        const input = document.getElementById('skill-search');
+        const skillName = input.value.trim();
+        if (skillName) {
+          // Call renderSkillItem directly for custom skills
+          renderSkillItem(skillName, "Custom Skill");
+          saveStep2DataOnly(); // Save to localStorage
+          input.value = '';
+          document.getElementById('skill-results').classList.add('hidden');
+        }
+      }
+
+      // This handles the live search dropdown logic
+      function handleSkillSearch(query) {
+        const resultsDiv = document.getElementById('skill-results');
+        if (!query || query.length < 1) {
+          resultsDiv.classList.add('hidden');
+          return;
+        }
+
+        const seen = new Set();
+        const matches = window.OFFICIAL_SKILL_DATABASE.filter(s => {
+          const isMatch = s.skill_name.toLowerCase().includes(query.toLowerCase());
+          if (isMatch && !seen.has(s.skill_name.toLowerCase())) {
+            seen.add(s.skill_name.toLowerCase());
+            return true;
+          }
+          return false;
+        }).slice(0, 5);
+
+        if (matches.length > 0) {
+          resultsDiv.innerHTML = matches.map(s => `
+          <div class="p-3 hover:bg-gray-100 cursor-pointer flex justify-between items-center border-b" 
+           onclick="selectSkill('${s.skill_name.replace(/'/g, "\\'")}')">
+          <span class="font-medium text-gray-800">${s.skill_name}</span>
+          <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold uppercase">Database Match</span>
+          </div>
+        `).join('');
+          resultsDiv.classList.remove('hidden');
+        } else {
+          // Show option to add as custom if no match found
+          resultsDiv.innerHTML = `
+      <div onclick="addSkillManual()" class="p-3 hover:bg-orange-50 cursor-pointer text-orange-600 text-sm font-medium">
+        + Add "${query}" as custom skill
+      </div>`;
+          resultsDiv.classList.remove('hidden');
+        }
+      }
     </script>
 
 </body>
